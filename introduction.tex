@@ -64,15 +64,15 @@ SYNOPSIS
   \begin{itemize}
   \item 
     Copy repository from github:\\
-    \texttt{git clone}
+    \cmd{git clone}
     \\\hfill
-    \texttt{https://github.com/vbraun/talk-git-sage-workflow.git}
+    \cmd{https://github.com/vbraun/talk-git-sage-workflow.git}
   \item View history:\\
-    \texttt{git log}
+    \cmd{git log}
   \item Show current branch:\\
-    \texttt{git branch}
+    \cmd{git branch}
   \item Switching between branches:\\
-    \texttt{git checkout master}\\\texttt{git checkout my\_branch}
+    \cmd{git checkout master}\\\cmd{git checkout my\_branch}
   \end{itemize}
 \end{frame}
 
@@ -80,7 +80,7 @@ SYNOPSIS
 \begin{frame}
   \frametitle{The Git Directed Acyclic Graph}
 
-  Whenever you run \texttt{git commit}, a snapshot of the current
+  Whenever you run \cmd{git commit}, a snapshot of the current
   state\footnote{Of the \emph{staging} directory tree, see next
     slide.} is added to the repository.
   \begin{itemize}
@@ -94,11 +94,44 @@ SYNOPSIS
 \end{frame}
 
 
+{
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/gitg_screenshot}}
+  \begin{frame}[plain]
+    % \includegraphics{images/gitg_screenshot}
+  \end{frame}
+}
+
+
+\begin{frame}
+  \frametitle{The Staging Area}
+
+  Three places to store files:
+  \begin{itemize}
+  \item The git database (the \texttt{.git} directory)
+  \item Staging area
+  \item The working directory: all files outside of \texttt{.git} 
+  \end{itemize}
+
+  \begin{block}{Staging area}
+    The staging area are the files that will be committed by
+    \texttt{git commit}
+    \begin{itemize}
+    \item Show staging: \cmd{git status}
+    \item Add to staging: \cmd{git add <filename>}
+    \item Remove from staging: \cmd{git reset HEAD <filename>}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+
+
 \begin{frame}
   \frametitle{Committing Changes}
 
-  
+  The changes are 
 \end{frame}
+
 
 
 
