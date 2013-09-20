@@ -57,7 +57,48 @@ SYNOPSIS
 
 
 
+\begin{frame}
+  \frametitle{Demo}
+  
+  Introduce the following commands:
+  \begin{itemize}
+  \item 
+    Copy repository from github:\\
+    \texttt{git clone}
+    \\\hfill
+    \texttt{https://github.com/vbraun/talk-git-sage-workflow.git}
+  \item View history:\\
+    \texttt{git log}
+  \item Show current branch:\\
+    \texttt{git branch}
+  \item Switching between branches:\\
+    \texttt{git checkout master}\\\texttt{git checkout my\_branch}
+  \end{itemize}
+\end{frame}
 
+
+\begin{frame}
+  \frametitle{The Git Directed Acyclic Graph}
+
+  Whenever you run \texttt{git commit}, a snapshot of the current
+  state\footnote{Of the \emph{staging} directory tree, see next
+    slide.} is added to the repository.
+  \begin{itemize}
+  \item Only forward: you can add commits, but never remove them.
+  \item But: you can abandon them.
+  \item Most of the time, commits one (direct) parent commit and one
+    child commit.
+  \item Multiple parents: \emph{Merge} commit
+  \item Number of children can change in the future...
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Committing Changes}
+
+  
+\end{frame}
 
 
 
