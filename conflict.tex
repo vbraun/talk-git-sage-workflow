@@ -1,0 +1,62 @@
+\section{Conflict Resolution}
+
+
+\begin{frame}[fragile]
+  \frametitle{Merge Conflicts}
+  
+  \begin{center}
+    \Large Don't Panic!
+  \end{center}
+
+  \begin{itemize}
+  \item 
+    Merge conflicts happen if there are overlapping edits.
+  \item 
+    Resolving them is common and easy.
+  \end{itemize}
+  
+  Example:
+  \begin{latexCode}
+    \begin{equation}
+      \label{eq:quad}
+      x = \frac{-b+-\sqrt{b^2-4ac}}{2a}
+    \end{equation}
+    are the two roots of the quadratic equation.
+  \end{latexCode}
+  
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  
+  On the flight to a conference I change this to
+  \begin{latexCode}
+    \begin{equation}
+      \label{eq:quad}
+      x_{1,2} = \frac{-b+-\sqrt{b^2-4ac}}{2a}
+    \end{equation}
+    are the two roots of the quadratic equation.
+  \end{latexCode}
+  \medskip
+  \pause
+  
+  Meanwhile, Jennifer corrects
+  \begin{latexCode}
+    \begin{equation}
+      \label{eq:quad}
+      x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+    \end{equation}
+    are the two roots of the quadratic equation.
+  \end{latexCode}
+  and pushes it to our common remote repository.
+  
+\end{frame}
+
+
+
+
+%%% Local Variables:
+%%% TeX-master: "talk"
+%%% eval: (TeX-PDF-mode 1)
+%%% End:

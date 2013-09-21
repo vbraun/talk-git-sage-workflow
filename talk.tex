@@ -1,6 +1,30 @@
-\documentclass[xcolor=pdftex,t,11pt]{beamer}
+\documentclass[t,11pt]{beamer}
+
+\usepackage{xcolor}
+\definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+
 
 \usepackage{tipa}
+
+\usepackage{listings}
+\lstnewenvironment{latexCode}{%
+  \lstset{%
+    language=[latex]tex,
+    texcsstyle=*\bf\color{blue},
+    numbers=none,
+    breaklines=true,
+    keywordstyle=\color{darkgreen},
+    commentstyle=\color{red},
+    % otherkeywords={$, \{, \}, \[, \]},
+    % frame=none,
+    % tabsize=2,
+    backgroundcolor=\color{lightgrey},
+    % caption=LaTeX example
+  }%
+}{}
+
+
 
 \usetheme[
 pagecounter=true,
@@ -44,6 +68,7 @@ ordinarypageslogo=images/oxford_small_square,
 
 \input{basic.tex}
 
+\input{conflict.tex}
 
 \section{Summary}
 

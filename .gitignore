@@ -17,5 +17,5 @@
 *.synctex.gz
 _region_.tex
 talk.pdf
-
+example/*.pdf
 
