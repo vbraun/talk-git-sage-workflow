@@ -39,6 +39,9 @@ git config --global user.email you@host.com
 
 
 
+\subsection{Using Git for Sage}
+
+
 \begin{frame}
   \frametitle{Obtaining the Sage Sources}
   
@@ -90,6 +93,8 @@ git config --global user.email you@host.com
 \end{frame}
 
 
+\subsection{Integration with Sage Trac}
+
 \begin{frame}
   \frametitle{Uploading Changes}
 
@@ -115,17 +120,23 @@ git config --global user.email you@host.com
 \end{frame}
 
 
+
 \begin{frame}
   \frametitle{Using Trac}
 
   \begin{itemize}
   \item When you push to a trac ticket, the ``Commit:'' field on the
     trac ticket is automatically filled out.
-  \item The ``Branch:'' field is colored:
+  \item The ``Branch:'' field is color coded:
     \begin{itemize}
-    \item Green means that it applied cleanly to the current master.
-    \item Red means that there is a conflict.
+    \item \textcolor{green}{Green} means that it applied cleanly to the current master.
+    \item \textcolor{red}{Red} means that there is a conflict.
     \end{itemize}
+  \item If you click on the ``(Commits)'' link under/next to the
+    branch, you can see the list of commits.
+  \item Download any branch for the first time as on the ``Downloading
+    a Branch from Trac'' slide.
+  \item To get changes, use \cmd{git pull trac u/user/description}
   \end{itemize}
 \end{frame}
 
@@ -135,6 +146,8 @@ git config --global user.email you@host.com
   \begin{frame}[plain]
   \end{frame}
 }
+
+
 
 
 
