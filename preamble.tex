@@ -1,0 +1,145 @@
+
+\usepackage{xcolor}
+\definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+
+
+\usepackage{tipa}
+
+\usepackage{listings}
+\lstnewenvironment{latexCode}{%
+  \lstset{%
+    language=[latex]tex,
+    texcsstyle=*\bf\color{blue},
+    numbers=none,
+    breaklines=true,
+    keywordstyle=\color{darkgreen},
+    commentstyle=\color{red},
+    % otherkeywords={$, \{, \}, \[, \]},
+    % frame=none,
+    % tabsize=2,
+    backgroundcolor=\color{lightgrey},
+    % caption=LaTeX example
+    basicstyle=\footnotesize\tt,
+  }%
+}{}
+
+
+\lstnewenvironment{shell}{%
+  \lstset{
+    basicstyle=\tt,
+    backgroundcolor=\color{lightgrey},
+    emph={vbraun@laptop},
+    emphstyle=\color{gray}\bfseries,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{gray}\slshape,
+  }%$
+}{}
+
+\lstnewenvironment{smallshell}{%
+  \lstset{%
+    basicstyle=\scriptsize\tt,
+    backgroundcolor=\color{lightgrey},
+    emph={vbraun@laptop},
+    emphstyle=\color{gray}\bfseries,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{gray}\slshape,
+  }%$
+}{}
+
+
+\lstnewenvironment{tinyshell}{%
+  \lstset{%
+    basicstyle=\tiny\tt,
+    backgroundcolor=\color{lightgrey},
+    emph={vbraun@laptop},
+    emphstyle=\color{gray}\bfseries,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{gray}\slshape,
+  }%$
+}{}
+
+
+
+\lstnewenvironment{bash}{%
+  \lstset{%
+    language=bash,
+    otherkeywords={=, +, [, ], (, ), \{, \}, *},
+    % bash commands from:
+    %http://www.math.montana.edu/Rweb/Rhelp/00Index.html
+    emph={addgroup,adduser,alias,
+    ant,
+    apropos,apt-get,aptitude,aspell,awk,
+    basename,bash,bc,bg,break,builtin,bzip2,cal,case,cat,cd,cfdisk,chgrp,
+    chkconfig,chmod,chown,chroot,cksum,clear,cmp,comm,command,continue,
+    cp,cron,crontab,csplit,cut,date,dc,dd,ddrescue,declare,df,diff,diff3,
+    dig,dir,dircolors,dirname,dirs,dmesg,du,echo,egrep,eject,enable,env,
+    ethtool,eval,exec,exit,expand,expect,export,expr,false,fdformat,
+    fdisk,fg,fgrep,file,find,fmt,fold,for,format,free,fsck,ftp,function,
+    fuser,gawk,getopts,
+    git,
+    grep,groups,gzip,
+    gunzip,
+    ,hash,head,help,history,hostname,
+    id,if,ifconfig,ifdown,ifup,import,install,
+    java, java6, java_cur
+    join,kill,killall,less,
+    let,ln,local,locate,logname,logout,look,lpc,lpr,lprint,lprintd,
+    lprintq,lprm,ls,lsof,make,man,mkdir,mkfifo,mkisofs,mknod,mmv,more,
+    mount,mtools,mtr,mv,
+    mysql,
+    netstat,nice,nl,nohup,notify-send,
+    noweb,noweave,
+    nslookup,op,
+    open,passwd,paste,pathchk,ping,pkill,popd,pr,printcap,printenv,
+    printf,ps,pushd,pwd,quota,quotacheck,quotactl,ram,rcp,read,
+    readarray,readonly,reboot,remsync,rename,renice,return,rev,rm,rmdir,
+    rsync,scp,screen,sdiff,sed,select,seq,set,sftp,shift,shopt,shutdown,
+    sleep,slocate,sort,source,split,ssh,strace,su,sudo,sum,
+    svn, svn2git,
+    symlink,sync,
+    tail,tar,tee,test,time,times,top,touch,tr,traceroute,trap,true,
+    tsort,tty,type,ulimit,umask,umount,unalias,uname,unexpand,uniq,
+    units,
+    unrar,
+    unset,unshar,until,useradd,usermod,users,uudecode,uuencode,
+    vdir,vi,vmstat,watch,wc,Wget,whereis,which,while,who,whoami,write,
+    zcat},
+    breaklines=true,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    emphstyle=\color{black}\bfseries,
+    commentstyle=\color{gray}\slshape,
+  }
+}{}
+
+
+
+
+\usetheme[
+pagecounter=true,
+pageofpages=of,  % page 7 "of" 9
+bullet=circle,
+titleline=true,
+alternativetitlepage=true,
+titlepagelogo=images/oxford_big_square,
+% titlepagefooterlogo=images/oxford_small_square,
+ordinarypageslogo=images/oxford_small_square,
+% watermark=images/oxford_small_square,   % bottom right corner
+% watermarkheight=100pt,
+% watermarkheightmult=4,
+]{Torino}
+\usecolortheme{greenandblue}
+\usefonttheme{structurebold}
+
+
+\newcommand{\cmd}[1]{\textcolor{blue}{\texttt{#1}}}
+
+
+%%% Local Variables:
+%%% TeX-master: "talk.tex"
+%%% eval: (TeX-PDF-mode 1)
+%%% End:

@@ -1,50 +1,6 @@
-\documentclass[t,11pt]{beamer}
+\documentclass[11pt]{beamer}
 
-\usepackage{xcolor}
-\definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
-\definecolor{darkgreen}{rgb}{0,0.6,0}
-
-
-\usepackage{tipa}
-
-\usepackage{listings}
-\lstnewenvironment{latexCode}{%
-  \lstset{%
-    language=[latex]tex,
-    texcsstyle=*\bf\color{blue},
-    numbers=none,
-    breaklines=true,
-    keywordstyle=\color{darkgreen},
-    commentstyle=\color{red},
-    % otherkeywords={$, \{, \}, \[, \]},
-    % frame=none,
-    % tabsize=2,
-    backgroundcolor=\color{lightgrey},
-    % caption=LaTeX example
-  }%
-}{}
-
-
-
-\usetheme[
-pagecounter=true,
-pageofpages=of,  % page 7 "of" 9
-bullet=circle,
-titleline=true,
-alternativetitlepage=true,
-titlepagelogo=images/oxford_big_square,
-% titlepagefooterlogo=images/oxford_small_square,
-ordinarypageslogo=images/oxford_small_square,
-% watermark=images/oxford_small_square,   % bottom right corner
-% watermarkheight=100pt,
-% watermarkheightmult=4,
-]{Torino}
-\usecolortheme{greenandblue}
-\usefonttheme{structurebold}
-
-
-\newcommand{\cmd}[1]{\textcolor{blue}{\texttt{#1}}}
-
+\input{preamble.tex}
 
 \author{Volker Braun}
 \title{Git and the New Sage Development Workflow}
