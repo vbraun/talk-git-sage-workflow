@@ -1,6 +1,14 @@
 
 \usepackage{xcolor}
+
 \definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
+
+\definecolor{mediumred}{rgb}{1.0,0.7,0.7}
+\definecolor{lightred}{rgb}{1.0,0.9,0.9}
+
+\definecolor{mediumgreen}{rgb}{0.7,1.0,0.7}
+\definecolor{lightgreen}{rgb}{0.9,1.0,0.9}
+
 \definecolor{darkgreen}{rgb}{0,0.6,0}
 
 
@@ -134,6 +142,14 @@ ordinarypageslogo=images/oxford_small_square,
 ]{Torino}
 \usecolortheme{greenandblue}
 \usefonttheme{structurebold}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\setbeamercolor{block body}{bg=lightgreen}
+\setbeamercolor{block title}{bg=divider1}
+
+\setbeamercolor{block body alerted}{bg=lightred,fg=black}
+\setbeamercolor{block title alerted}{bg=mediumred,fg=black}
 
 
 \newcommand{\cmd}[1]{\textcolor{blue}{\texttt{#1}}}
