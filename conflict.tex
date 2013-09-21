@@ -1,4 +1,4 @@
-\section{Conflict Resolution}
+\subsection{Conflict Resolution}
 
 
 \begin{frame}[fragile]
@@ -126,6 +126,27 @@ result.
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Finishing Up}
+
+  \begin{itemize}
+  \item When you are finished resolving the conflict, just commit:\\
+    \cmd{git add quadratic\_equation.tex}\\
+    \cmd{git commit -m 'merged Jennifers TeX fix'}
+  \item Now, git lets me push to the remote repository.
+  \item When Jennifer pulls from the remote later, she gets my change
+    and my resolution of the conflict.
+  \item To abort the merge:\\
+    \cmd{git merge --abort}    
+  \end{itemize}
+\end{frame}
+
+
+{
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/after_merge}}
+  \begin{frame}[plain]
+  \end{frame}
+}
 
 
 %%% Local Variables:
