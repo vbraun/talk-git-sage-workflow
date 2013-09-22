@@ -1,0 +1,53 @@
+
+\begin{frame}[fragile]
+  \frametitle{Sage Dev Scripts}
+
+  Can develop normal tickets without using \cmd{git} or going to the
+  \url{http://trac.sagemath.org} web page yourself:
+  \begin{smallshell}
+[vbraun@laptop]$ sage -dev help
+usage: sage-dev [-h] subcommand ...
+
+The developer interface for sage.
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+subcommands:
+    abandon             Abandon a ticket or branch.
+    checkout            Checkout another branch.
+    comment             Add a comment to ``ticket`` on trac.
+    commit              Create a commit from the pending
+                        changes on the current branch.
+    ...
+  \end{smallshell}%$
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{More on Dev Scripts}
+  
+  \begin{itemize}
+  \item 
+    Also available in a Sage session, for example
+    \begin{shell}
+      sage: dev.create_ticket?
+      sage: dev.commit?
+    \end{shell}
+  \item Scripts will set up your name/email/ssh keys on first use.
+  \item Not part of official Sage release yet, but usable.
+  \item Scripts are included in the \cmd{public/sage-git/master}
+    branch.
+  \end{itemize}
+  
+\end{frame}
+
+
+
+
+
+%%% Local Variables:
+%%% TeX-master: "talk.tex"
+%%% eval: (TeX-PDF-mode 1)
+%%% End:

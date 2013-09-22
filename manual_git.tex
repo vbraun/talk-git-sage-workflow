@@ -223,12 +223,55 @@ git config --global user.email you@host.com
       \item When you push to trac, the extra commit propagates to your
         collaborators. 
       \item When in doubt, use merge instead of rebase.
+      \item No new features in \texttt{master} that you depend on and
+        no conflicts? Do nothing. Don't create useless merges.
   \end{itemize}
   
 \end{frame}
 
 
 
+\begin{frame}
+  \frametitle{Reviewing Commits}
+
+  \begin{itemize}
+  \item Trac tickets are abstract goals to meet.
+  \item Commits are individual changes of the sources.
+  \item There is only a map \textcolor{blue}{ticket $\to$ subset of
+      all commits}, namely all parents of the commit listed on the
+    ``Commit:'' trac field.
+  \item In particular, a commit can be part of multiple tickets.
+  \end{itemize}
+  \begin{block}{Commits to review}
+    The ticket commit and all parent commits leading to the ticket are
+    part of the review. Except for commits that are already merged
+    into Sage:
+    \\
+    \cmd{git log <branch-or-sha1> \textasciicircum master}
+  \end{block}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Dependencies and Reviewing Commits}
+
+  \begin{itemize}
+  \item 
+    You can list the history excluding dependencies:\\
+    \cmd{git log <branch> \textasciicircum master \textasciicircum
+      <dep1> \textasciicircum <dep2>}
+  \item But: When your ticket is merged, all parent commits are
+    merged.
+  \item Whether any particular parent is part of a dependency ticket
+    can change as the dependency ticket evolves.
+  \item In particular, you might end up with abandoned commits from a
+    dependency.
+  \item Hence: All parent commits are part of the review. 
+  \item To simplify review, start with the trac dependencies and have
+    them merged into Sage.
+  \end{itemize}
+\end{frame}
 
 
 
