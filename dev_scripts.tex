@@ -45,6 +45,47 @@ subcommands:
 
 
 
+\begin{frame}
+  \frametitle{Working on a Ticket}
+  
+  \begin{itemize}
+  \item Optional: Create a ticket on trac:\\
+    \cmd{sage -dev create-ticket}\\
+    \cmd{sage -dev edit-ticket}
+  \item Create a local branch to work on the ticket:\\
+    \cmd{sage -dev checkout --ticket <number>}
+  \item Work on the source code...
+  \item Commit your changes:\\
+    \cmd{sage -dev commit}
+  \item Push your local branch to trac:\\
+    \cmd{sage -dev push}
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Reviewing Tickets}
+  
+  \begin{alertblock}{Likely to erase the dev scripts right now}
+    If you checkout a ticket that does not contain the dev scripts,
+    then they will be gone after the checkout.
+  \end{alertblock}
+
+  \begin{itemize}
+  \item Checkout the ticket into a local branch:\\
+    \cmd{sage -dev checkout --ticket <number>}
+  \item If the ticket is good to go, set it to positive review:\\
+    \cmd{sage -dev positive-review}
+  \item If there is any remaining issue add a comment:\\
+    \cmd{sage -dev comment}
+  \item Or make edits yourself:\\
+    \cmd{sage -dev commit}\\
+    \cmd{sage -dev push}
+  \end{itemize}
+\end{frame}
+
+
 
 
 %%% Local Variables:
