@@ -150,6 +150,87 @@ git config --global user.email you@host.com
 
 
 
+\begin{frame}[fragile]
+  \frametitle{Merging vs.\ Rebasing}
+
+  While you are working on \cmd{my\_branch}, Sage development
+  continues.
+\begin{verbatim}
+             X---Y---Z my_branch
+            /
+       A---B---C---D master
+\end{verbatim}
+  Two ways to update:
+  \begin{itemize}
+  \item Merge: \cmd{git merge master}
+\begin{verbatim}
+             X---Y---Z---W my_branch
+            /           /
+       A---B---C-------D master
+\end{verbatim}
+  \item Rebase: \cmd{git rebase master}
+\begin{verbatim}
+                     X'--Y'--Z' my_branch
+                    /
+       A---B---C---D master
+\end{verbatim}
+  \end{itemize}
+  
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Rebasing}
+  
+    \begin{itemize}
+    \item Rebase: \cmd{git rebase master}
+\begin{verbatim}
+                     X'--Y'--Z' my_branch
+                    /
+       A---B---C---D master
+\end{verbatim}
+    \item Pro: Clean history.
+    \item Con: Since the SHA1 hash includes the hash of the parent,
+      all commits change.
+    \item Only ever use rebase if nobody else has used one of your
+      \texttt{X}, \texttt{Y}, \texttt{Z} commits to base their
+      development on.
+    \item Only rebase commits that you have not yet pushed to trac.
+  \end{itemize}
+  
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Merging}
+  
+    \begin{itemize}
+  \item Merge: \cmd{git merge master}
+\begin{verbatim}
+             X---Y---Z---W my_branch
+            /           /
+       A---B---C-------D master
+\end{verbatim}
+      \item Pro: None of the existing commits changes
+      \item Con: Introduces a new commit \texttt{W} that will be in the
+        \cmd{git log} history forever.
+      \item When you push to trac, the extra commit propagates to your
+        collaborators. 
+      \item When in doubt, use merge instead of rebase.
+  \end{itemize}
+  
+\end{frame}
+
+
+
+
+
 
 
 %%% Local Variables:
