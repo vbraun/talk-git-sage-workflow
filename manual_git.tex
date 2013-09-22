@@ -6,14 +6,14 @@
 
   Your name and email address become part of the commit message 
   \begin{itemize}
-  \item Global configuration stored in $\sim$\verb#/.gitconfig#. Either
+  \item<2-> Global configuration stored in $\sim$\verb#/.gitconfig#. Either
     open in your favorite editor to add
     \begin{shell}
     [user]
         name = Your Name
         email = you@host.com
     \end{shell}
-  \item or via the command line:
+  \item<3-> or via the command line:
     \begin{shell}
 git config --global user.name "Your Name"
 git config --global user.email you@host.com
@@ -28,9 +28,9 @@ git config --global user.email you@host.com
   
   To contribute to Sage, you need 
   \begin{itemize}
-  \item a trac account, see instructions at \url{http://trac.sagemath.org}
-  \item upload your ssh \emph{public} key to the trac server
-  \item This is described in detail in
+  \item<2-> a trac account, see instructions at \url{http://trac.sagemath.org}
+  \item<3-> upload your ssh \emph{public} key to the trac server
+  \item<4-> This is described in detail in
     \url{http://sagemath.github.io/git-developer-guide/trac.html#authentication},
     a temporary copy of the new developer guide.
   \end{itemize}
@@ -46,10 +46,10 @@ git config --global user.email you@host.com
   \frametitle{Obtaining the Sage Sources}
   
   \begin{itemize}
-  \item 
+  \item<1->
     Download the Sage git repository from github:\\
     \cmd{git clone git://github.com/sagemath/sage.git}
-  \item 
+  \item<2->
     Setup the ``trac'' remote:\\
     {
       \cmd{cd sage}\\
@@ -57,12 +57,12 @@ git config --global user.email you@host.com
       \hfill
       \cmd{ssh://git@trac.sagemath.org:2222/sage.git -t master}
     }
-  \item Note: the \cmd{-t master} means to only fetch the master
+  \item<3-> Note: the \cmd{-t master} means to only fetch the master
     branch by default 
     \begin{itemize}
-    \item Pro: Avoids downloading all branches on trac; Faster and
+    \item<4-> Pro: Avoids downloading all branches on trac; Faster and
       less clutter
-    \item Con: You have to tell git which branches to download
+    \item<5-> Con: You have to tell git which branches to download
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -81,15 +81,16 @@ git config --global user.email you@host.com
    
    So, first get this branch:
    \begin{itemize}
-   \item 
+   \item<1->
      Tell git which branch to download:\\
      \cmd{git fetch trac public/sage-git/master}
-   \item 
+   \item<2->
      Create a new local branch from what you just downloaded:\\
      \cmd{git checkout -b trac\_master FETCH\_HEAD}
    \end{itemize}
-
-   Then build Sage as usual (run \cmd{make})
+   \onslide<3->{
+     Then build Sage as usual (run \cmd{make})
+   }
 \end{frame}
 
 
@@ -99,21 +100,21 @@ git config --global user.email you@host.com
   \frametitle{Uploading Changes}
 
   \begin{itemize}
-  \item Now edit files and commit changes. Just like with any other git
+  \item<1-> Now edit files and commit changes. Just like with any other git
     repository.
-  \item If you have a (new or existing) ticket, fill in the
+  \item<2-> If you have a (new or existing) ticket, fill in the
     ``Branch:'' field with the name that you will be using to upload.
-  \item The remote branch name must be \cmd{u/user/description}, where
+  \item<3-> The remote branch name must be \cmd{u/user/description}, where
     \begin{itemize}
-    \item \cmd{user} is your trac username
-    \item \cmd{description} is a free-form short description (and can
+    \item<3-> \cmd{user} is your trac username
+    \item<3-> \cmd{description} is a free-form short description (and can
       include further slashes)
     \end{itemize}
-  \item 
+  \item<4-> 
     When you are ready to share, upload to trac:\\
     \cmd{git push --set-upstream trac}\\
     \hspace{2cm}\cmd{my\_branch:u/user/description}
-  \item 
+  \item<5->
     Slightly different push command for subsequent uploads:\\
     \cmd{git push trac HEAD:u/user/description}
   \end{itemize}
@@ -125,18 +126,18 @@ git config --global user.email you@host.com
   \frametitle{Using Trac}
 
   \begin{itemize}
-  \item When you push to a trac ticket, the ``Commit:'' field on the
+  \item<1-> When you push to a trac ticket, the ``Commit:'' field on the
     trac ticket is automatically filled out.
-  \item The ``Branch:'' field is color coded:
+  \item<2-> The ``Branch:'' field is color coded:
     \begin{itemize}
     \item \textcolor{green}{Green} means that it applied cleanly to the current master.
     \item \textcolor{red}{Red} means that there is a conflict.
     \end{itemize}
-  \item If you click on the ``(Commits)'' link under/next to the
+  \item<3-> If you click on the ``(Commits)'' link under/next to the
     branch, you can see the list of commits.
-  \item Download any branch for the first time as on the ``Downloading
+  \item<4-> Download any branch for the first time as on the ``Downloading
     a Branch from Trac'' slide.
-  \item To get changes, use \cmd{git pull trac u/user/description}
+  \item<5-> To get changes, use \cmd{git pull trac u/user/description}
   \end{itemize}
 \end{frame}
 
@@ -160,15 +161,15 @@ git config --global user.email you@host.com
             /
        A---B---C---D master
 \end{verbatim}
-  Two ways to update:
+  \onslide<2->{Two ways to update:}
   \begin{itemize}
-  \item Merge: \cmd{git merge master}
+  \item<2-> Merge: \cmd{git merge master}
 \begin{verbatim}
              X---Y---Z---W my_branch
             /           /
        A---B---C-------D master
 \end{verbatim}
-  \item Rebase: \cmd{git rebase master}
+  \item<3-> Rebase: \cmd{git rebase master}
 \begin{verbatim}
                      X'--Y'--Z' my_branch
                     /
@@ -186,19 +187,19 @@ git config --global user.email you@host.com
   \frametitle{Rebasing}
   
     \begin{itemize}
-    \item Rebase: \cmd{git rebase master}
+    \item<1-> Rebase: \cmd{git rebase master}
 \begin{verbatim}
                      X'--Y'--Z' my_branch
                     /
        A---B---C---D master
 \end{verbatim}
-    \item Pro: Clean history.
-    \item Con: Since the SHA1 hash includes the hash of the parent,
+    \item<2-> Pro: Clean history.
+    \item<3-> Con: Since the SHA1 hash includes the hash of the parent,
       all commits change.
-    \item Only ever use rebase if nobody else has used one of your
+    \item<4-> Only ever use rebase if nobody else has used one of your
       \texttt{X}, \texttt{Y}, \texttt{Z} commits to base their
       development on.
-    \item Only rebase commits that you have not yet pushed to trac.
+    \item<5-> Only rebase commits that you have not yet pushed to trac.
   \end{itemize}
   
 \end{frame}
@@ -211,19 +212,19 @@ git config --global user.email you@host.com
   \frametitle{Merging}
   
     \begin{itemize}
-  \item Merge: \cmd{git merge master}
+  \item<1-> Merge: \cmd{git merge master}
 \begin{verbatim}
              X---Y---Z---W my_branch
             /           /
        A---B---C-------D master
 \end{verbatim}
-      \item Pro: None of the existing commits changes
-      \item Con: Introduces a new commit \texttt{W} that will be in the
+      \item<2-> Pro: None of the existing commits changes
+      \item<3-> Con: Introduces a new commit \texttt{W} that will be in the
         \cmd{git log} history forever.
-      \item When you push to trac, the extra commit propagates to your
+      \item<4-> When you push to trac, the extra commit propagates to your
         collaborators. 
-      \item When in doubt, use merge instead of rebase.
-      \item No new features in \texttt{master} that you depend on and
+      \item<5-> When in doubt, use merge instead of rebase.
+      \item<6-> No new features in \texttt{master} that you depend on and
         no conflicts? Do nothing. Don't create useless merges.
   \end{itemize}
   
@@ -235,21 +236,23 @@ git config --global user.email you@host.com
   \frametitle{Reviewing Commits}
 
   \begin{itemize}
-  \item Trac tickets are abstract goals to meet.
-  \item Commits are individual changes of the sources.
-  \item There is only a map \textcolor{blue}{ticket $\to$ subset of
+  \item<1-> Trac tickets are abstract goals to meet.
+  \item<2-> Commits are individual changes of the sources.
+  \item<3-> There is only a map \textcolor{blue}{ticket $\to$ subset of
       all commits}, namely all parents of the commit listed on the
     ``Commit:'' trac field.
-  \item In particular, a commit can be part of multiple tickets.
+  \item<4-> In particular, a commit can be part of multiple tickets.
   \end{itemize}
-  \begin{block}{Commits to review}
-    The ticket commit and all parent commits leading to the ticket are
-    part of the review. Except for commits that are already merged
-    into Sage:
-    \\
-    \cmd{git log <branch-or-sha1> \textasciicircum master}
-  \end{block}
 
+  \onslide<5->{
+    \begin{block}{Commits to review}
+      The ticket commit and all parent commits leading to the ticket are
+      part of the review. Except for commits that are already merged
+      into Sage:
+      \\
+      \cmd{git log <branch-or-sha1> \textasciicircum master}
+    \end{block}
+  }
 \end{frame}
 
 
@@ -257,18 +260,18 @@ git config --global user.email you@host.com
   \frametitle{Dependencies and Reviewing Commits}
 
   \begin{itemize}
-  \item 
+  \item<1->
     You can list the history excluding dependencies:\\
     \cmd{git log <branch> \textasciicircum master \textasciicircum
       <dep1> \textasciicircum <dep2>}
-  \item But: When your ticket is merged, all parent commits are
+  \item<2-> But: When your ticket is merged, all parent commits are
     merged.
-  \item Whether any particular parent is part of a dependency ticket
+  \item<3-> Whether any particular parent is part of a dependency ticket
     can change as the dependency ticket evolves.
-  \item In particular, you might end up with abandoned commits from a
+  \item<4-> In particular, you might end up with abandoned commits from a
     dependency.
-  \item Hence: All parent commits are part of the review. 
-  \item To simplify review, start with the trac dependencies and have
+  \item<5-> Hence: All parent commits are part of the review. 
+  \item<6-> To simplify review, start with the trac dependencies and have
     them merged into Sage.
   \end{itemize}
 \end{frame}

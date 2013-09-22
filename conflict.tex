@@ -9,12 +9,15 @@
   \end{center}
 
   \begin{itemize}
-  \item 
+  \item<2->
     Merge conflicts happen if there are overlapping edits.
-  \item 
+  \item<3->
     Resolving them is common and easy.
   \end{itemize}
   
+  \pause
+  \pause
+  \pause
   Example:
   \begin{latexCode}
     \begin{equation}
@@ -23,7 +26,6 @@
     \end{equation}
     are the two roots of the quadratic equation.
   \end{latexCode}
-  
 \end{frame}
 
 
@@ -68,8 +70,9 @@ hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
 hint: before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
   \end{tinyshell}  %$
+  \pause
 
-  The \cmd{git status} says the same thing:
+  The \cmd{git status} command tells me the same thing:
   \begin{smallshell}
 [vbraun@laptop]$ git status
 # On branch quadratic_equation
@@ -117,8 +120,8 @@ result.
   \frametitle{Resolving the Conflict}
 
   \begin{itemize}
-  \item Open the file in your favorite editor and fix, or
-  \item Use a specialized program (I like \cmd{meld}): \cmd{git mergetool}\\
+  \item<1-> Open the file in your favorite editor and fix, or
+  \item<2-> Use a specialized program (I like \cmd{meld}): \cmd{git mergetool}\\
     \medskip
 
     \includegraphics[width=\linewidth]{images/mergetool_meld}
@@ -130,13 +133,13 @@ result.
   \frametitle{Finishing Up}
 
   \begin{itemize}
-  \item When you are finished resolving the conflict, just commit:\\
+  \item<1-> When you are finished resolving the conflict, just commit:\\
     \cmd{git add quadratic\_equation.tex}\\
     \cmd{git commit -m "merged Jennifers TeX fix"}
-  \item Now, git lets me push to the remote repository.
-  \item When Jennifer pulls from the remote later, she gets my change
+  \item<2-> Now, git lets me push to the remote repository.
+  \item<3-> When Jennifer pulls from the remote later, she gets my change
     and my resolution of the conflict.
-  \item To abort the merge:\\
+  \item<4-> To abort the merge:\\
     \cmd{git merge --abort}    
   \end{itemize}
 \end{frame}

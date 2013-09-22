@@ -8,12 +8,12 @@
   state\footnote{Of the \emph{staging} directory tree, see next
     slide.} is added to the repository.
   \begin{itemize}
-  \item Only forward: you can add commits, but never remove them.
-  \item But: you can abandon them.
-  \item Most of the time, commits have one (direct) parent commit and
+  \item<2-> Only forward: you can add commits, but never remove them.
+  \item<3-> But: you can abandon them.
+  \item<4-> Most of the time, commits have one (direct) parent commit and
     one child commit.
-  \item Multiple parents: \emph{Merge} commit
-  \item Multiple children: number can always increase in the future...
+  \item<5-> Multiple parents: \emph{Merge} commit
+  \item<6-> Multiple children: number can always increase in the future...
   \end{itemize}
 \end{frame}
 
@@ -31,20 +31,22 @@
 
   Three places to store files:
   \begin{itemize}
-  \item The git database (the \texttt{.git} directory)
-  \item Staging area
-  \item The working directory: all files outside of \texttt{.git} 
+  \item<2-> The git database (the \texttt{.git} directory)
+  \item<3-> Staging area
+  \item<4-> The working directory: all files outside of \texttt{.git} 
   \end{itemize}
-
-  \begin{block}{Staging area}
-    The staging area are the files that will be committed by
-    \cmd{git commit}
-    \begin{itemize}
-    \item Show staging: \cmd{git status}
-    \item Add to staging: \cmd{git add <filename>}
-    \item Remove from staging: \cmd{git reset HEAD <filename>}
-    \end{itemize}
-  \end{block}
+  
+  \onslide<5->{
+    \begin{block}{Staging area}
+      The staging area are the files that will be committed by
+      \cmd{git commit}
+      \begin{itemize}
+      \item Show staging: \cmd{git status}
+      \item Add to staging: \cmd{git add <filename>}
+      \item Remove from staging: \cmd{git reset HEAD <filename>}
+      \end{itemize}
+    \end{block}
+  }
 \end{frame}
 
 
@@ -62,15 +64,19 @@
     \end{itemize}
   \end{block}
   
-  Each commit is uniquely specified by the SHA1 hash\footnote{a 40
-    digit hex number} of
+  \onslide<2->{
+    Each commit is uniquely specified by the SHA1 hash\footnote{a 40
+      digit hex number} of
+  }
   \begin{itemize}
-  \item All changes to files
-  \item All parent commits
-  \item The commit message
+  \item<2-> All changes to files
+  \item<3-> All parent commits
+  \item<4-> The commit message
   \end{itemize}
-  None of these can ever be changed, including all direct and indirect
-  parents.
+  \onslide<5->{
+    None of these can ever be changed, including all direct and indirect
+    parents.
+  }
 \end{frame}
 
 
@@ -79,16 +85,16 @@
 
   Branches organize parallel development
   \begin{itemize}
-  \item A branch is just a shortcut for a particular commit
-  \item If you create a new commit, the branch automatically advances
+  \item<2-> A branch is just a shortcut for a particular commit
+  \item<3-> If you create a new commit, the branch automatically advances
     to it
-  \item The default branch is \texttt{master}, but you can use any name
-  \item \texttt{HEAD} is the commit at the tip of the branch:\\
+  \item<4-> The default branch is \texttt{master}, but you can use any name
+  \item<5-> \texttt{HEAD} is the commit at the tip of the branch:\\
     \cmd{git show HEAD}
-  \item \texttt{HEAD$\sim$} is the parent of \texttt{HEAD}
-  \item \texttt{HEAD$\sim$2} is the parent of the parent of
+  \item<6-> \texttt{HEAD$\sim$} is the parent of \texttt{HEAD}
+  \item<7-> \texttt{HEAD$\sim$2} is the parent of the parent of
     \texttt{HEAD}
-  \item etc.
+  \item<7-> etc.
   \end{itemize}
 \end{frame}
 
@@ -97,20 +103,22 @@
   \frametitle{Remote Repositories}
   
   \begin{itemize}
-  \item Remotes repositories are bookmarks.
-  \item Configure with \cmd{git remote}
-  \item \textbf{D}istributed VCS: all remotes are equal.
-  \item The "important" one (to you) is usually called \texttt{origin}
+  \item<1-> Remotes repositories are bookmarks.
+  \item<2-> Configure with \cmd{git remote}
+  \item<3-> \textbf{D}istributed VCS: all remotes are equal.
+  \item<4-> The "important" one (to you) is usually called \texttt{origin}
   \end{itemize}
 
-  If there are no conflicts:
+  \onslide<5->{
+    If there are no conflicts:
+  }
   \begin{itemize}
-  \item Upload your changes to the remote repository:\\
+  \item<5-> Upload your changes to the remote repository:\\
     \cmd{git push <remote>}
-  \item Download changes from the remote repository and update the
+  \item<6-> Download changes from the remote repository and update the
     local working directory:\\
     \cmd{git pull <remote>}
-  \item There is a default remote for each branch, see\\
+  \item<7-> There is a default remote for each branch, see\\
     \cmd{git remote show <remote>}
   \end{itemize}
 

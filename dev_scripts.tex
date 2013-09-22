@@ -29,15 +29,15 @@ subcommands:
   \frametitle{More on Dev Scripts}
   
   \begin{itemize}
-  \item 
+  \item<1->
     Also available in a Sage session, for example
     \begin{shell}
       sage: dev.create_ticket?
       sage: dev.commit?
     \end{shell}
-  \item Scripts will set up your name/email/ssh keys on first use.
-  \item Not part of official Sage release yet, but usable.
-  \item Scripts are included in the \cmd{public/sage-git/master}
+  \item<2-> Scripts will set up your name/email/ssh keys on first use.
+  \item<3-> Not part of official Sage release yet, but usable.
+  \item<4-> Scripts are included in the \cmd{public/sage-git/master}
     branch.
   \end{itemize}
   
@@ -49,15 +49,15 @@ subcommands:
   \frametitle{Working on a Ticket}
   
   \begin{itemize}
-  \item Optional: Create a ticket on trac:\\
+  \item<1-> Optional: Create a ticket on trac:\\
     \cmd{sage -dev create-ticket}\\
     \cmd{sage -dev edit-ticket}
-  \item Create a local branch to work on the ticket:\\
+  \item<2-> Create a local branch to work on the ticket:\\
     \cmd{sage -dev checkout --ticket <number>}
-  \item Work on the source code...
-  \item Commit your changes:\\
+  \item<3-> Work on the source code...
+  \item<4-> Commit your changes:\\
     \cmd{sage -dev commit}
-  \item Push your local branch to trac:\\
+  \item<5-> Push your local branch to trac:\\
     \cmd{sage -dev push}
   \end{itemize}
 \end{frame}
@@ -67,19 +67,20 @@ subcommands:
 \begin{frame}
   \frametitle{Reviewing Tickets}
   
-  \begin{alertblock}{Likely to erase the dev scripts right now}
-    If you checkout a ticket that does not contain the dev scripts,
-    then they will be gone after the checkout.
-  \end{alertblock}
-
+  \onslide<5->{
+    \begin{alertblock}{Likely to erase the dev scripts right now}
+      If you checkout a ticket that does not contain the dev scripts,
+      then they will be gone after the checkout.
+    \end{alertblock}
+  }
   \begin{itemize}
-  \item Checkout the ticket into a local branch:\\
+  \item<1-> Checkout the ticket into a local branch:\\
     \cmd{sage -dev checkout --ticket <number>}
-  \item If the ticket is good to go, set it to positive review:\\
+  \item<2-> If the ticket is good to go, set it to positive review:\\
     \cmd{sage -dev positive-review}
-  \item If there is any remaining issue add a comment:\\
+  \item<3-> If there is any remaining issue add a comment:\\
     \cmd{sage -dev comment}
-  \item Or make edits yourself:\\
+  \item<4-> Or make edits yourself:\\
     \cmd{sage -dev commit}\\
     \cmd{sage -dev push}
   \end{itemize}
